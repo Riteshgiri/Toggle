@@ -1,0 +1,30 @@
+#intelij
+.idea
+.npmrc
+*.iml
+
+# except for .gitignore  and .npmrc
+!.gitignore
+!.eslintrc
+!.eslintignore
+!.prettierignore
+
+# dependencies
+node_modules
+package-lock.json
+
+# builds
+build
+dist
+lib
+statistics.html
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+*.log*
