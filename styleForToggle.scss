@@ -1,7 +1,8 @@
+
 #container {
   width: 160px;
   height: 36px;
-  margin: auto;
+  margin-left: 130px;
   position: relative;
   border-radius: 6px;
   overflow: hidden;
@@ -26,7 +27,7 @@
 }
 
 .inner-container:nth-child(2) {
-  background: dodgerblue;
+  background: #D74046;
   color: white;
   clip-path: inset(0 50% 0 0);
   transition: .3s cubic-bezier(0,0,0,1);
