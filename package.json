@@ -1,0 +1,28 @@
+{
+  "name": "togglelabels",
+  "version": "1.0.0",
+  "description": "Toggle Button between two optins with usability and flexibility to assign labels to the two options for toggle, rather than the generic 'ON/OFF'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Riteshgiri/ToggleLabels.git"
+  },
+  "keywords": [
+    "Toggle",
+    "Toggle",
+    "Key",
+    "Toggle",
+    "Options",
+    "Toggle",
+    "Style"
+  ],
+  "author": "Ritesh Giri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Riteshgiri/ToggleLabels/issues"
+  },
+  "homepage": "https://github.com/Riteshgiri/ToggleLabels#readme"
+}
