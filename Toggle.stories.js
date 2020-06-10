@@ -6,8 +6,8 @@ import { action } from '@storybook/addon-actions';
 
 storiesOf('ui-kit/Toggle', module).add('Component', () => (
     <Toggle
-        default={text('default')}
-        textOption={text('textOption')}
+        defaultOption={text('default')}
+        otherOption={text('textOption')}
         onChange={action('changed-selection-clicked')}
     />
 ));
