@@ -7,14 +7,20 @@ export default class Toggle extends React.Component {
         super(props);
         this.myRef = React.createRef();
         this.myRefCopy = React.createRef();
+        this.RefForPTags = React.createRef();
+        this.RefForDefaultTags = React.createRef();
         this.state = {
-            value: this.props.default,
+            value: this.props.defaultOption,
         };
+        this.handleClick = this.handleClick.bind(this);
     }
     componentDidMount() {
         const toggle = this.myRef.current;
         const toggleContainer = this.myRefCopy.current;
+        const defaultTag = this.RefForDefaultTags.current;
+        const OptionTag = this.RefForPTags.current;
         let toggleNumber = false;
+        defaultTag.style.color = '#e9e9e9';
         if (toggle) {
             toggle.addEventListener('click', handleToggle);
         }
@@ -22,29 +28,38 @@ export default class Toggle extends React.Component {
             toggleNumber = !toggleNumber;
             if (toggleNumber) {
                 toggleContainer.style.clipPath = 'inset(0 0 0 50%)';
-                toggleContainer.style.backgroundColor = '#D74046';
+                OptionTag.style.color = '#e9e9e9';
             } else {
                 toggleContainer.style.clipPath = 'inset(0 50% 0 0)';
-                toggleContainer.style.backgroundColor = 'dodgerblue';
+                defaultTag.style.color = '#e9e9e9';
             }
             return toggleNumber;
         }
-        if (toggleNumber) {
-            this.props.onChange(this.props.textOption);
-        } else {
-            this.props.onChange(this.props.default);
+    }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevState.value !== this.state.value) {
+            this.props.onChange(this.state.value);
         }
+    }
+
+    handleClick() {
+        this.setState({
+            value:
+                this.state.value === this.props.defaultOption
+                    ? this.props.otherOption
+                    : this.props.defaultOption,
+        });
     }
 
     render() {
         return (
-            <div id="container" ref={this.myRef}>
+            <button id="container" onClick={this.handleClick} ref={this.myRef}>
                 <div className="inner-container">
                     <div className="toggle">
-                        <p>{this.props.textOption}</p>
+                        <p>{this.props.otherOption}</p>
                     </div>
                     <div className="toggle">
-                        <p>{this.props.default}</p>
+                        <p>{this.props.defaultOption}</p>
                     </div>
                 </div>
                 <div
@@ -53,28 +68,30 @@ export default class Toggle extends React.Component {
                     ref={this.myRefCopy}
                 >
                     <div className="toggle">
-                        <p>{this.props.textOption}</p>
+                        <p ref={this.RefForPTags}>{this.props.otherOption}</p>
                     </div>
                     <div className="toggle">
-                        <p>{this.props.default}</p>
+                        <p ref={this.RefForDefaultTags}>
+                            {this.props.defaultOption}
+                        </p>
                     </div>
                 </div>
-            </div>
+            </button>
         );
     }
 }
 
 Toggle.defaultProps = {
-    default: '',
-    textOption: '',
+    defaultOption: '',
+    otherOption: '',
 };
 
 Toggle.propTypes = {
     /** flag to show first option of toggle */
-    default: PropTypes.string,
+    defaultOption: PropTypes.string,
 
     /** flag to show second option of toggle */
-    textOption: PropTypes.string,
+    otherOption: PropTypes.string,
 
     /** Callback function */
     onChange: PropTypes.func.isRequired,
