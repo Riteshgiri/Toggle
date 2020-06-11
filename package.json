@@ -1,5 +1,5 @@
 {
-  "name": "togglelabels",
+  "name": "react-togglelabels",
   "version": "1.0.1",
   "description": "Toggle Button between two optins with usability and flexibility to assign labels to the two options for toggle, rather than the generic 'ON/OFF'",
   "main": "index.js",
@@ -11,8 +11,7 @@
     "url": "git+https://github.com/Riteshgiri/ToggleLabels.git"
   },
   "keywords": [
-    "Toggle",
-    "Toggle",
+    "react",
     "Key",
     "Toggle",
     "Options",
