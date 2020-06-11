@@ -53,7 +53,7 @@ export default class Toggle extends React.Component {
 
     render() {
         return (
-            <button id="container" onClick={this.handleClick} ref={this.myRef}>
+            <button type="button" id="container" onClick={this.handleClick} ref={this.myRef}>
                 <div className="inner-container">
                     <div className="toggle">
                         <p>{this.props.otherOption}</p>
