@@ -6,8 +6,8 @@ Example :
 
 ```
 <Toggle
-    defaultOption="CSV"
-    otherOption="Excel"
+    defaultOption="STRING"
+    otherOption="INT"
     onChange={this.handleChange}
 />
 ```
@@ -19,3 +19,7 @@ Currently it takes in 3 props:
 
 Example view
  
+![](ToggelLabels.gif)
+
+Updates Coming Soon:
+Color and Style Selection via props
