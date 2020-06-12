@@ -2,3 +2,20 @@
 
 Toggle Button between two options with flexibility to assign labels to the two options for toggle, rather than the generic 'ON/OFF'
 
+Example :
+
+```
+<Toggle
+    defaultOption="CSV"
+    otherOption="Excel"
+    onChange={this.handleChange}
+/>
+```
+Currently it takes in 3 props:
+
+1. defaultOption : The default selected Option/label in Toggle
+2. otherOption : The second option/label in Toggle
+3. onChange : On shifting the toggle button
+
+Example view
+ 
